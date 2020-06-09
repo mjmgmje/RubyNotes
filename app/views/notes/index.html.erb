@@ -1,0 +1,12 @@
+<h1>Listing Notes</h1>
+    <div class="row">
+      <% @notes.each do |note| %>
+        <div class="col-3 mb-3">
+          <div class="note">
+            <p class="note-text"><%= note.note_text %></p>
+            <p class="note-date"><%= note.creation_date %></p>
+          </div>
+        </div>
+      <% end %>
+    </div>
+<%= button_to "New note", '/notes/new', method: :get%>

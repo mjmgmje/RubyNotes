@@ -1,0 +1,28 @@
+
+
+<div class="wrapper fadeInDown">
+  <div id="formContent">
+    <!-- Tabs Titles -->
+
+
+    <!-- Login Form -->
+    <h1>Sign Up</h1>
+      <%= form_for @user do |f|%>
+        <div>
+          <%= f.label :username%><br>
+          <%= f.text_field :username%><br>
+        </div>
+        <div>
+          <%= f.label :password%><br>
+          <%= f.password_field :password%><br>
+        <div>
+        <%= f.submit %>
+    <%end%>
+
+    <!-- Remind Passowrd -->
+    <div id="formFooter">
+      <a class="underlineHover" href="/login">Log In</a>
+    </div>
+
+  </div>
+</div>
