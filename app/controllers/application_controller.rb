@@ -3,6 +3,7 @@ class ApplicationController < ActionController::Base
     before_action :authorized
     helper_method :current_user
     helper_method :logged_in?
+    helper_method :admin?
 
     def current_user
         User.find_by(id: session[:user_id])
@@ -14,7 +15,19 @@ class ApplicationController < ActionController::Base
     end
 
     def authorized
-    redirect_to '/welcome' unless logged_in?
+        redirect_to '/welcome' unless logged_in?
+    end
+
+    def admin?
+        if logged_in?
+            current_user.user_role=="admin"
+        else
+            false
+        end
+    end
+
+    def admin_authorized
+        redirect_to '/welcome' unless admin?
     end
 
 end

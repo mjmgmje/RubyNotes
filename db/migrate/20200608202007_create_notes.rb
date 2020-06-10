@@ -1,9 +1,8 @@
 class CreateNotes < ActiveRecord::Migration[6.0]
   def change
     create_table :notes do |t|
-      t.string :note_text
-      t.string :user_id
-      t.string :creation_date
+      t.string :note_text, null: false
+      t.string :user_id, null:false
 
       t.timestamps
     end

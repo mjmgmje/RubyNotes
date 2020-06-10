@@ -18,4 +18,17 @@ class NotesController < ApplicationController
     @note[:user_id] = session[:user_id]
     redirect_to '/welcome'
   end
+
+  def delete
+    @note = Note.find(params[:id])  
+    @note.destroy
+  end
+  
+  def update
+    noteOld = Note.find(params[:id])
+    noteNew = params.require(:note).permit(:note_text)
+    noteOld.update(noteNew)
+    redirect_to '/welcome'
+  end
+
 end

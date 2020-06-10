@@ -1,0 +1,21 @@
+<div class="wrapper fadeInDown">
+  <div id="formContent">
+    <h1>Update User</h1>
+      <%= form_with(url: "/user/#{@user.id}", method: "put") do%>
+        <div>
+          <%= label_tag :username%><br>
+          <%= text_field_tag :username, @user.username%><br>
+        </div>
+        <div>
+          <%= label_tag :password%><br>
+          <%= password_field_tag :password%><br>
+        <div>
+        <div class="mt-3">
+          <%= check_box_tag(:user_role, :class=>"form-check-input") %>
+          <%= label_tag(:user_role, "Admin", :class=>"form-check-label") %>
+        <div>
+        <%= submit_tag %>
+    <%end%>
+
+  </div>
+</div>

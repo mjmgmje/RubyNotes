@@ -1,12 +1,15 @@
-<h1>Listing Notes</h1>
-    <div class="row">
+<%= render "layouts/nav" %>
+    <div class="row mt-5">
       <% @notes.each do |note| %>
         <div class="col-3 mb-3">
           <div class="note">
             <p class="note-text"><%= note.note_text %></p>
-            <p class="note-date"><%= note.creation_date %></p>
+            <p class="note-date"><%= note.created_at %></p>
           </div>
         </div>
       <% end %>
     </div>
 <%= button_to "New note", '/notes/new', method: :get%>
+<% if admin? %>
+<%= button_to "New user", '/users/newAdmin', method: :get%>
+<% end %>

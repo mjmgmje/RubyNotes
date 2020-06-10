@@ -6,11 +6,20 @@
     border-radius: 10px 10px 10px 10px;
     background: #fff;
     margin: auto;
-    padding: 30px;
+    padding-top: 10px;
     width: 90%;
     max-width: 250px;
     height: 250px;
     -webkit-box-shadow: 0 2px 5px 0 rgba(0,0,0,0.3);
     box-shadow: 0 2px 5px 0 rgba(0,0,0,0.3);
     text-align: center;
+}
+
+.note-date{
+    font-size: 10px;
+    position: absolute;
+    bottom: 0;
+    text-align: right;
+    margin-left: 25%;
+    float: right;
 }
