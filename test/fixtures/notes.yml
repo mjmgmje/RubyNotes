@@ -3,9 +3,7 @@
 one:
   note_text: MyString
   user_id: MyString
-  creation_date: MyString
 
 two:
   note_text: MyString
   user_id: MyString
-  creation_date: MyString

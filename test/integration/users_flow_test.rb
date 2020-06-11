@@ -1,12 +1,11 @@
 require 'test_helper'
 
-class NotesControllerTest < ActionDispatch::IntegrationTest
-  test "should get index" do
+class UsersFlowTest < ActionDispatch::IntegrationTest
+  
+  test "can sign up" do
     post "/users",
       params: {user: {username: "username", password: "username"}}
       assert_redirected_to "/notes"
-    get notes_index_url
-    assert_response :success
   end
 
 end
