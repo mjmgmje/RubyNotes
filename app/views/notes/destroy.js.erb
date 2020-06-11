@@ -1,0 +1,6 @@
+$('.deleteLink').bind('ajax:success', function() {
+   $(this).closest('form.col-12').fadeOut();
+});
+$("#success-delete-alert").fadeTo(2000, 500).slideUp(500, function(){
+    $("#success-delete-alert").slideUp(500);
+});

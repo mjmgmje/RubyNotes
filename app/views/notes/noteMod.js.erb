@@ -1,0 +1,12 @@
+$('.modifyLink').bind('ajax:success', function() {
+    var e = $(this).siblings('.note-text').contents()[0];
+    $.ajax({
+        type:'PUT',
+        url: '/user/'+id,
+        data: "note_text="+e,
+        success:function(result){
+             alert("Usuario borrado correctamente");
+             $(this).closest('li').fadeOut();
+            }
+    });
+}); 
