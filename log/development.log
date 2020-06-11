@@ -34764,3 +34764,258 @@ Processing by NotesController#destroy as JS
 Completed 200 OK in 21ms (Views: 2.5ms | ActiveRecord: 7.2ms | Allocations: 4518)
 
 
+Started GET "/" for ::1 at 2020-06-11 21:54:35 +0200
+  [1m[35m (7.8ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by SessionsController#create as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:12:in `create'
+Redirected to http://localhost:3000/login
+Completed 302 Found in 71ms (ActiveRecord: 1.1ms | Allocations: 5816)
+
+
+Started GET "/login" for ::1 at 2020-06-11 21:54:35 +0200
+Processing by SessionsController#new as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:9:in `current_user'
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (Duration: 4.4ms | Allocations: 707)
+[Webpacker] Compiling...
+[Webpacker] Compiled all packs in C:/Users/mjbellido/Documents/RubyNotes/public/packs
+[Webpacker] Hash: 4e8dc6b80238badee0f5
+Version: webpack 4.43.0
+Time: 9166ms
+Built at: 2020-06-11 21:54:53
+                                     Asset       Size       Chunks                         Chunk Names
+    js/application-18d302c409bf7a29129e.js    841 KiB  application  [emitted] [immutable]  application
+js/application-18d302c409bf7a29129e.js.map    897 KiB  application  [emitted] [dev]        application
+         js/jquery-d16dc94fc68da7c49bfc.js    137 KiB       jquery  [emitted] [immutable]  jquery
+     js/jquery-d16dc94fc68da7c49bfc.js.map    113 KiB       jquery  [emitted] [dev]        jquery
+          js/notes-cddaffb88b823464b4db.js    415 KiB        notes  [emitted] [immutable]  notes
+      js/notes-cddaffb88b823464b4db.js.map    398 KiB        notes  [emitted] [dev]        notes
+                             manifest.json  965 bytes               [emitted]              
+Entrypoint application = js/application-18d302c409bf7a29129e.js js/application-18d302c409bf7a29129e.js.map
+Entrypoint jquery = js/jquery-d16dc94fc68da7c49bfc.js js/jquery-d16dc94fc68da7c49bfc.js.map
+Entrypoint notes = js/notes-cddaffb88b823464b4db.js js/notes-cddaffb88b823464b4db.js.map
+[./app/javascript/packs/application.js] 747 bytes {application} [built]
+[./app/javascript/packs/jquery.min.js] 133 KiB {jquery} [built]
+[./app/javascript/packs/notes.js] 2.19 KiB {notes} [built]
+[./node_modules/webpack/buildin/module.js] (webpack)/buildin/module.js 552 bytes {application} [built]
+    + 111 hidden modules
+
+Completed 200 OK in 17744ms (Views: 17732.5ms | ActiveRecord: 0.3ms | Allocations: 310586)
+
+
+Started POST "/login" for ::1 at 2020-06-11 21:54:59 +0200
+Processing by SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"wNTFg4EGSv1gA1LH8/FqX/ModLXHzqxwyI7QhGbwIYb581rCsf2jpnulTO2uD8dAulVut6uXSJJuOklkXp44Bw==", "username"=>"admin", "password"=>"[FILTERED]", "commit"=>"Login"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "admin"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:12:in `create'
+Redirected to http://localhost:3000/notes
+Completed 302 Found in 218ms (ActiveRecord: 1.1ms | Allocations: 4241)
+
+
+Started GET "/notes" for ::1 at 2020-06-11 21:54:59 +0200
+Processing by NotesController#index as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:9:in `current_user'
+  Rendering notes/index.html.erb within layouts/application
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:9:in `current_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:9:in `current_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:9:in `current_user'
+  Rendered layouts/_nav.html.erb (Duration: 3.4ms | Allocations: 1778)
+  [1m[36mNote Load (0.3ms)[0m  [1m[34mSELECT "notes".* FROM "notes" WHERE (user_id = 2)[0m
+  ↳ app/views/notes/index.html.erb:18
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered notes/index.html.erb within layouts/application (Duration: 42.8ms | Allocations: 9076)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 92ms (Views: 85.7ms | ActiveRecord: 1.5ms | Allocations: 17479)
+
+
+Started GET "/user/index" for ::1 at 2020-06-11 21:55:09 +0200
+Processing by UsersController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:9:in `current_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:9:in `current_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:9:in `current_user'
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:9:in `current_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:9:in `current_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:9:in `current_user'
+  Rendered layouts/_nav.html.erb (Duration: 12.6ms | Allocations: 1608)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/users/index.html.erb:3
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:9:in `current_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:9:in `current_user'
+  Rendered users/index.html.erb within layouts/application (Duration: 27.1ms | Allocations: 4517)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 88ms (Views: 79.2ms | ActiveRecord: 0.7ms | Allocations: 13898)
+
+
+Started GET "/notes" for ::1 at 2020-06-11 21:55:13 +0200
+Processing by NotesController#index as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:9:in `current_user'
+  Rendering notes/index.html.erb within layouts/application
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:9:in `current_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:9:in `current_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:9:in `current_user'
+  Rendered layouts/_nav.html.erb (Duration: 3.2ms | Allocations: 1609)
+  [1m[36mNote Load (0.4ms)[0m  [1m[34mSELECT "notes".* FROM "notes" WHERE (user_id = 2)[0m
+  ↳ app/views/notes/index.html.erb:18
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered notes/index.html.erb within layouts/application (Duration: 40.9ms | Allocations: 5761)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 83ms (Views: 80.6ms | ActiveRecord: 0.9ms | Allocations: 13127)
+
+
+Started GET "/note/7" for ::1 at 2020-06-11 21:55:27 +0200
+Processing by NotesController#noteChange as JS
+  Parameters: {"id"=>"7"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:9:in `current_user'
+  [1m[36mNote Load (0.3ms)[0m  [1m[34mSELECT "notes".* FROM "notes" WHERE "notes"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/notes_controller.rb:37:in `noteChange'
+  Rendering notes/noteChange.js.erb
+  Rendered notes/noteChange.js.erb (Duration: 0.4ms | Allocations: 110)
+Completed 200 OK in 7ms (Views: 3.4ms | ActiveRecord: 0.5ms | Allocations: 1894)
+
+
+Started PUT "/note/7" for ::1 at 2020-06-11 21:56:46 +0200
+Processing by NotesController#update as JS
+  Parameters: {"authenticity_token"=>"pGKUsHbIMYyPf+FVfGN+vOK1IPuL9OXfw5tG2jG7uu/piAzpH8AbkO1fB7nWLJ4c0s6KH1u+SKlpssyeRwIH2Q==", "note_text"=>"Many will call me an adventurer, and that I am...only one of a different sort: one who risks his skin to prove his truths.", "commit"=>"confirm", "id"=>"7"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:9:in `current_user'
+  [1m[36mNote Load (0.2ms)[0m  [1m[34mSELECT "notes".* FROM "notes" WHERE "notes"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/notes_controller.rb:47:in `update'
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/notes_controller.rb:50:in `update'
+  [1m[36mNote Update (1.7ms)[0m  [1m[33mUPDATE "notes" SET "note_text" = ?, "updated_at" = ? WHERE "notes"."id" = ?[0m  [["note_text", "Many will call me an adventurer, and that I am...only one of a different sort: one who risks his skin to prove his truths."], ["updated_at", "2020-06-11 19:56:46.294427"], ["id", 7]]
+  ↳ app/controllers/notes_controller.rb:50:in `update'
+  [1m[35m (111.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/notes_controller.rb:50:in `update'
+  Rendering notes/update.js.erb
+  Rendered notes/update.js.erb (Duration: 0.5ms | Allocations: 185)
+Completed 200 OK in 155ms (Views: 4.6ms | ActiveRecord: 114.1ms | Allocations: 4404)
+
+
+Started GET "/note/8" for ::1 at 2020-06-11 21:56:53 +0200
+Processing by NotesController#noteChange as JS
+  Parameters: {"id"=>"8"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:9:in `current_user'
+  [1m[36mNote Load (0.2ms)[0m  [1m[34mSELECT "notes".* FROM "notes" WHERE "notes"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/controllers/notes_controller.rb:37:in `noteChange'
+  Rendering notes/noteChange.js.erb
+  Rendered notes/noteChange.js.erb (Duration: 0.0ms | Allocations: 4)
+Completed 200 OK in 4ms (Views: 0.8ms | ActiveRecord: 0.5ms | Allocations: 1480)
+
+
+Started PUT "/note/8" for ::1 at 2020-06-11 21:56:55 +0200
+Processing by NotesController#update as JS
+  Parameters: {"authenticity_token"=>"UNECz5NLXU3ndujUhchmE+IFIYSxIrZJH3Msca1+Cqdsn2GfIp9/3vDN4qE6PSfx30PCnyp+7eym6Ek+m4W/qg==", "note_text"=>"If you tremble with indignation at every injustice then you are a comrade of mine.", "commit"=>"confirm", "id"=>"8"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:9:in `current_user'
+  [1m[36mNote Load (0.2ms)[0m  [1m[34mSELECT "notes".* FROM "notes" WHERE "notes"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/controllers/notes_controller.rb:47:in `update'
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/notes_controller.rb:50:in `update'
+  [1m[36mNote Update (1.2ms)[0m  [1m[33mUPDATE "notes" SET "note_text" = ?, "updated_at" = ? WHERE "notes"."id" = ?[0m  [["note_text", "If you tremble with indignation at every injustice then you are a comrade of mine."], ["updated_at", "2020-06-11 19:56:55.710770"], ["id", 8]]
+  ↳ app/controllers/notes_controller.rb:50:in `update'
+  [1m[35m (108.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/notes_controller.rb:50:in `update'
+  Rendering notes/update.js.erb
+  Rendered notes/update.js.erb (Duration: 0.3ms | Allocations: 29)
+Completed 200 OK in 123ms (Views: 2.3ms | ActiveRecord: 110.1ms | Allocations: 4221)
+
+
+Started GET "/note/12" for ::1 at 2020-06-11 21:57:02 +0200
+Processing by NotesController#noteChange as JS
+  Parameters: {"id"=>"12"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:9:in `current_user'
+  [1m[36mNote Load (0.2ms)[0m  [1m[34mSELECT "notes".* FROM "notes" WHERE "notes"."id" = ? LIMIT ?[0m  [["id", 12], ["LIMIT", 1]]
+  ↳ app/controllers/notes_controller.rb:37:in `noteChange'
+  Rendering notes/noteChange.js.erb
+  Rendered notes/noteChange.js.erb (Duration: 0.1ms | Allocations: 4)
+Completed 200 OK in 5ms (Views: 2.2ms | ActiveRecord: 0.4ms | Allocations: 1481)
+
+
+Started PUT "/note/12" for ::1 at 2020-06-11 21:57:05 +0200
+Processing by NotesController#update as JS
+  Parameters: {"authenticity_token"=>"PPpUJmQQmKqnmpXuWNIdinPmX6TcqTUGekDySrbFQIZME+mJ8n8wTduUC2/h+7He+jql8hOmmhYcmKPSaC2W0w==", "note_text"=>"We cannot be sure of having something to live for unless we are willing to die for it.", "commit"=>"confirm", "id"=>"12"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:9:in `current_user'
+  [1m[36mNote Load (0.2ms)[0m  [1m[34mSELECT "notes".* FROM "notes" WHERE "notes"."id" = ? LIMIT ?[0m  [["id", 12], ["LIMIT", 1]]
+  ↳ app/controllers/notes_controller.rb:47:in `update'
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/notes_controller.rb:50:in `update'
+  [1m[36mNote Update (1.4ms)[0m  [1m[33mUPDATE "notes" SET "note_text" = ?, "updated_at" = ? WHERE "notes"."id" = ?[0m  [["note_text", "We cannot be sure of having something to live for unless we are willing to die for it."], ["updated_at", "2020-06-11 19:57:05.058126"], ["id", 12]]
+  ↳ app/controllers/notes_controller.rb:50:in `update'
+  [1m[35m (87.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/notes_controller.rb:50:in `update'
+  Rendering notes/update.js.erb
+  Rendered notes/update.js.erb (Duration: 0.1ms | Allocations: 28)
+Completed 200 OK in 100ms (Views: 0.9ms | ActiveRecord: 89.1ms | Allocations: 3907)
+
+
+Started GET "/user/index" for ::1 at 2020-06-11 21:57:12 +0200
+Processing by UsersController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:9:in `current_user'
+  [1m[36mCACHE User Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:9:in `current_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:9:in `current_user'
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:9:in `current_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:9:in `current_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:9:in `current_user'
+  Rendered layouts/_nav.html.erb (Duration: 4.8ms | Allocations: 1608)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/users/index.html.erb:3
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:9:in `current_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:9:in `current_user'
+  Rendered users/index.html.erb within layouts/application (Duration: 13.2ms | Allocations: 4135)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 73ms (Views: 53.8ms | ActiveRecord: 1.3ms | Allocations: 12532)
+
+
+Started GET "/notes" for ::1 at 2020-06-11 21:57:15 +0200
+Processing by NotesController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:9:in `current_user'
+  Rendering notes/index.html.erb within layouts/application
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:9:in `current_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:9:in `current_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:9:in `current_user'
+  Rendered layouts/_nav.html.erb (Duration: 7.1ms | Allocations: 1608)
+  [1m[36mNote Load (0.4ms)[0m  [1m[34mSELECT "notes".* FROM "notes" WHERE (user_id = 2)[0m
+  ↳ app/views/notes/index.html.erb:18
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered notes/index.html.erb within layouts/application (Duration: 43.9ms | Allocations: 5758)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 88ms (Views: 82.6ms | ActiveRecord: 0.7ms | Allocations: 13429)
+
+

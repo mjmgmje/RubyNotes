@@ -18,17 +18,17 @@
         "/packs/js/jquery-d16dc94fc68da7c49bfc.js.map"
       ]
     },
-    "users": {
+    "notes": {
       "js": [
-        "/packs/js/users-474de61a771df8dd12aa.js"
+        "/packs/js/notes-cddaffb88b823464b4db.js"
       ],
       "js.map": [
-        "/packs/js/users-474de61a771df8dd12aa.js.map"
+        "/packs/js/notes-cddaffb88b823464b4db.js.map"
       ]
     }
   },
   "jquery.js": "/packs/js/jquery-d16dc94fc68da7c49bfc.js",
   "jquery.js.map": "/packs/js/jquery-d16dc94fc68da7c49bfc.js.map",
-  "users.js": "/packs/js/users-474de61a771df8dd12aa.js",
-  "users.js.map": "/packs/js/users-474de61a771df8dd12aa.js.map"
+  "notes.js": "/packs/js/notes-cddaffb88b823464b4db.js",
+  "notes.js.map": "/packs/js/notes-cddaffb88b823464b4db.js.map"
 }

@@ -1,24 +1,25 @@
-# README
+# RubyNotes
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## Installation
 
-Things you may want to cover:
+### Install Ruby
 
-* Ruby version
+### Install Rails
 
-* System dependencies
+~$ gem install rails
 
-* Configuration
+### install dem dependencies
 
-* Database creation
+~$ bundle install
 
-* Database initialization
+### install npm dependencies
 
-* How to run the test suite
+~$ npm install 
 
-* Services (job queues, cache servers, search engines, etc.)
+### install yarn dependencies 
 
-* Deployment instructions
+~$ yarn install
 
-* ...
+### execute 
+
+~$ rails server
