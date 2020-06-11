@@ -1,6 +1,6 @@
 console.log("nothechange run js");
 $('.modifyLink').bind('ajax:success', function() {
-   $(this).siblings('.note-text').contents().wrapAll("<textarea>").parent().unwrap();
+   $(this).siblings('.note-text').contents().wrapAll("<textarea class='form-control ml-2'>").parent().unwrap();
    $(this).siblings('textarea').attr("id", "note_text")
    $(this).siblings('textarea').attr("name", "note_text")
    $(this).siblings('.deleteLink').addClass('d-none');

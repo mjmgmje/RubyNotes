@@ -15,7 +15,7 @@ class UsersController < ApplicationController
     userNew[:user_role] = "teamMember"
     @user = User.create(userNew)
     session[:user_id] = @user.id
-    redirect_to '/users'
+    redirect_to '/notes'
   end
 
   def createAdmin

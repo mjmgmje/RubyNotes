@@ -2,7 +2,7 @@ $(".newNote").on("click", function () {
     
     var form = `<form class='col-xl-3 col-lg-4 col-sm-6 col-12 mb-3' action='/notes' accept-charset='UTF-8' data-remote='true' method='post'>
     <div class='note'>
-        <textarea id="note_text" name="note_text"></textarea>
+        <textarea id="note_text" class="form-control ml-2 mr-2" name="note_text"></textarea>
         <input type='submit' name='commit' value='confirm' class='confirmButton btn btn-success' data-disable-with='confirm'>
         <p class='note-date'>2020-06-10 18:11:16 UTC</p>
         <a data-confirm="Are you sure?" class="deleteLink d-none" data-remote="true" rel="nofollow" data-method="delete" href="/note/"> 
