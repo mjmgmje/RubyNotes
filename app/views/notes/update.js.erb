@@ -1,26 +1,15 @@
-/*$("form").bind('ajax:success', function() {
-    if($(this).contents('div.note').contents('textarea')!=null){ 
-        var p= "<p class='note-text mt-3'>"+note_text.value+"</p>";
-        $(this).contents('div.note').contents('textarea').replaceWith(p);
-        $(this).contents('div.note').contents('.deleteLink').removeClass('d-none');
-        $(this).contents('div.note').contents('.confirmButton').addClass('d-none');
-        $(this).contents('div.note').contents('.modifyLink').removeClass('d-none');
-    }
-});*/ 
-var form = $(note_text.form);
-var p= "<p class='note-text mt-3 ml-2 mr-2 text-left'>"+note_text.value+"</p>";
-form.contents('div.note').contents('textarea').replaceWith(p);
-form.contents('div.note').contents('.deleteLink').removeClass('d-none');
-form.contents('div.note').contents('.confirmButton').addClass('d-none');
-form.contents('div.note').contents('.modifyLink').removeClass('d-none');
-$("#success-mod-alert").fadeTo(2000, 500).slideUp(500, function(){
-    $("#success-mod-alert").slideUp(500);
-});
-
-/*$(".confirmButton").on('click', function() {
-    var p= "<p class='note-text mt-3'>"+note_text.value+"</p>";
-    $(this).siblings('textarea').replaceWith(p);
-    $(this).siblings('.deleteLink').removeClass('d-none');
-    $(this).addClass('d-none');
-    $(this).siblings('.modifyLink').removeClass('d-none');
-});*/
+if(<%= @noteOld.valid? %>) {
+    var form = $(note_text.form);
+    var p= "<p class='note-text mt-3 ml-2 mr-2 text-left'>"+note_text.value+"</p>";
+    form.contents('div.note').contents('textarea').replaceWith(p);
+    form.contents('div.note').contents('.deleteLink').removeClass('d-none');
+    form.contents('div.note').contents('.confirmButton').addClass('d-none');
+    form.contents('div.note').contents('.modifyLink').removeClass('d-none');
+    $("#success-mod-alert").fadeTo(2000, 500).slideUp(500, function(){
+        $("#success-mod-alert").slideUp(500);
+    });
+} else {
+    $("#empty-alert").fadeTo(2000, 500).slideUp(500, function(){
+        $("#empty-alert").slideUp(500);
+    });
+}

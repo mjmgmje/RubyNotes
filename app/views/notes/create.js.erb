@@ -1,0 +1,20 @@
+if(<%= @note.valid?%>){
+var form = $(note_text.form);
+var p= "<p class='note-text mt-3 ml-2 mr-2 text-left'>"+note_text.value+"</p>";
+var put = "<input type='hidden' name='_method' value='put'>"
+form.attr("action", "/note/".concat(<%=@note.id%>));
+form.append(put);
+form.contents('div.note').contents('textarea').replaceWith(p);
+form.contents('div.note').contents('.deleteLink').removeClass('d-none');
+form.contents('div.note').contents('.deleteLink').attr("href", "note/".concat(<%=@note.id%>));
+form.contents('div.note').contents('.confirmButton').addClass('d-none');
+form.contents('div.note').contents('.modifyLink').removeClass('d-none');
+form.contents('div.note').contents('.modifyLink').attr("href", "note/".concat(<%=@note.id%>));
+$("#success-create-alert").fadeTo(2000, 500).slideUp(500, function(){
+    $("#success-create-alert").slideUp(500);
+});
+} else {
+    $("#empty-alert").fadeTo(2000, 500).slideUp(500, function(){
+        $("#empty-alert").slideUp(500);
+    });
+}

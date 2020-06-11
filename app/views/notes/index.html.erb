@@ -1,4 +1,19 @@
 <%= render "layouts/nav" %>
+<div class="alert alert-success fade collapse" id="success-mod-alert">
+   <strong>Success!</strong>
+   Note successfully modified!
+</div>
+<div class="alert alert-danger fade collapse" id="success-delete-alert">
+   <strong>Note</strong> has been deleted
+</div>
+<div class="alert alert-success fade collapse" id="success-create-alert">
+   <strong>Success!</strong>
+   Note successfully added!
+</div>
+<div class="alert alert-warning fade collapse" id="empty-alert">
+   <strong>Error!</strong>
+   Note can't be empty!
+</div>
     <div class="row mt-5">
       <% @notes.each do |note| %>
       <%= form_with(url: "/note/#{note.id}", method: "put", :class=>"col-xl-3 col-lg-4 col-sm-6 col-12 mb-3") do |f| %>
@@ -24,11 +39,5 @@
         <% end %>
       <% end %>
     </div>
-<%= button_to "New note", '/notes/new', method: :get%>
-<div class="alert alert-success fade collapse" id="success-mod-alert">
-   <strong>Success!</strong>
-   Note successfully modified!
-</div>
-<div class="alert alert-danger fade collapse" id="success-delete-alert">
-   <strong>Note</strong> has been deleted
-</div>
+<button class="newNote btn btn-primary btn-center">New Note</button>
+<%= javascript_pack_tag 'notes'%>

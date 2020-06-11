@@ -47,3 +47,14 @@
       transform:  rotate(0deg);
     }
   }
+
+  .btn-primary{
+    background-color: #56bced !important;
+    border-color: #56bced !important;
+    color: #121f2a;
+  }
+
+  .btn-center{
+      display: block;
+      margin: 0 auto;
+  }

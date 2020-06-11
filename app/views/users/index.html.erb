@@ -20,6 +20,5 @@
       <% end %>
     </div>
 <% if admin? %>
-<%= button_to "New user", '/user/newAdmin', method: :get%>
+<button class="btn btn-primary btn-center mt-3" href="/user/newAdmin">New User</button>
 <% end %>
-<%= javascript_pack_tag 'users'%>

@@ -15,7 +15,7 @@ class ApplicationController < ActionController::Base
     end
 
     def authorized
-        redirect_to '/welcome' unless logged_in?
+        redirect_to '/login' unless logged_in?
     end
 
     def admin?
@@ -27,7 +27,7 @@ class ApplicationController < ActionController::Base
     end
 
     def admin_authorized
-        redirect_to '/welcome' unless admin?
+        redirect_to '/notes' unless admin?
     end
 
 end

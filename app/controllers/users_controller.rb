@@ -1,7 +1,6 @@
 class UsersController < ApplicationController
   
   skip_before_action :authorized, only: [:new, :create]
-  skip_before_action :verify_authenticity_token, only: [:destroy]
 
   def new
     @user = User.new
@@ -16,7 +15,7 @@ class UsersController < ApplicationController
     userNew[:user_role] = "teamMember"
     @user = User.create(userNew)
     session[:user_id] = @user.id
-    redirect_to '/welcome'
+    redirect_to '/users'
   end
 
   def createAdmin
@@ -41,7 +40,7 @@ class UsersController < ApplicationController
     if admin?
       @users = User.all
     else
-      redirect_to "/welcome"
+      redirect_to "/notes"
     end
   end
 
