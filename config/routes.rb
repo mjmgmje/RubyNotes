@@ -23,6 +23,7 @@ Rails.application.routes.draw do
   put 'user/:id', to: 'users#update'
   # put 'noteMod/:id', to: 'notes#update'
   put 'note/:id', to: 'notes#update'
+  get 'notes/search', to: 'notes#search'
 
  
 

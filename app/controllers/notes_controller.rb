@@ -55,4 +55,9 @@ class NotesController < ApplicationController
     end
   end
 
+  def search
+    @notes = Note.where("user_id = #{session[:user_id]} and note_text like ?", "%"+params[:search]+"%");
+    render "index"
+  end
+
 end

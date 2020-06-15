@@ -14,7 +14,11 @@
    <strong>Error!</strong>
    Note can't be empty!
 </div>
-    <div class="row mt-5">
+<form class="form-inline my-2 my-lg-0 search"  action="/notes/search">
+  <input class="form-control mr-sm-2" name="search" type="text" placeholder="Search..." aria-label="Search">
+  <button class="btn btn-primary my-2 my-sm-0" type="submit">Search</button>
+</form>
+    <div class="row mt-6">
       <% @notes.each do |note| %>
       <%= form_with(url: "/note/#{note.id}", method: "put", :class=>"col-xl-3 col-lg-4 col-sm-6 col-12 mb-3") do |f| %>
           <div class="note">
