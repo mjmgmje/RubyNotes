@@ -19,6 +19,5 @@ $(".newNote").on("click", function () {
         </a>
     </div>
     </form>`
-    $(this).siblings(".row.mt-5").append(form);
-    console.log($(this).siblings(".row.mt5"));
+    $(this).siblings(".row.mt-6").append(form);
 });

@@ -1,7 +1,9 @@
 if(<%= @noteOld.valid? %>) {
     var form = $(note_text.form);
+    console.log(form);
     var p= "<p class='note-text mt-3 ml-2 mr-2 text-left'>"+note_text.value+"</p>";
     form.contents('div.note').contents('textarea').replaceWith(p);
+    console.log(form);
     form.contents('div.note').contents('.deleteLink').removeClass('d-none');
     form.contents('div.note').contents('.confirmButton').addClass('d-none');
     form.contents('div.note').contents('.modifyLink').removeClass('d-none');
